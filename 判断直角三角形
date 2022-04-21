@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+int judge(double a,double b,double c);
+//返回1说明是直角三角形，返回-1说明不是三角形，返回0说明是非直角三角形
+int judge(double a,double b,double c)
+{
+    int i;
+    if (a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b)
+    {
+        if (a*a + b*b == c*c||a*a == b*b + c*c||a*a + c*c == b*b)
+            i = 1;
+        else
+        {
+            i = 0;
+        }
+    }
+    else
+    {
+        i = -1;
+    }
+    return i;
+}
+int main()
+{
+    double a, b, c;
+    printf("请输入三角形三边：");
+    scanf("%lf%lf%lf",&a,&b,&c);
+    if (judge(a,b,c)== 1);
+    printf("这是一个直角三角形\n");
+    if (judge(a,b,c)== 0)
+    printf("这个三角形不是直角三角形\n");
+    if (judge(a,b,c)== -1)
+        printf("error");
+    return 0;
+}
