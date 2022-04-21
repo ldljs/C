@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+int change(int n);
+int change(n)
+{
+    int a;
+    a = n % 2;
+    if (n>=2)
+    {
+        change(n/2);
+    }
+    printf("%d",a);
+}
+int main()
+{
+   int n;
+   printf("请输入一个十进制数字：\n");
+   while(scanf("%d",&n)==1)
+   {
+       if(n<0)
+       {
+           printf("Error");
+           break;
+       }
+       printf("十进制转换为的二进制数字是：\n");
+       change(n);
+       printf("\n");
+       printf("请输入一个十进制数字：\n");
+   }
+
+   return 0;
+}
